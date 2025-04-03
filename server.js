@@ -5,7 +5,7 @@ const server = fastify()
 
 const database = new DatabaseController()
 
-server.get('/', async (request) => {
+server.get('/', async (request, reply) => {
 
     const almoco = await database.gerarAlmoço()
     return reply.status(200).send(almoco)
