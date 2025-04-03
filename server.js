@@ -8,8 +8,7 @@ const database = new DatabaseController()
 server.get('/', async (request) => {
 
     const almoco = await database.gerarAlmoço()
-
-    return almoco
+    return reply.status(200).send(almoco)
 })
 
 server.listen({
